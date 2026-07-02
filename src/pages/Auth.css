@@ -1,0 +1,182 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 40px;
+  background-color: transparent;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.auth-title {
+  color: #7a0009;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.auth-subtitle {
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.auth-provider-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.auth-provider-btn.huawei-btn {
+  background: #c6000f;
+  color: white;
+  border: none;
+}
+
+.auth-provider-btn.huawei-btn:hover {
+  background: #a3000c;
+  box-shadow: 0 5px 15px rgba(198, 0, 15, 0.3);
+}
+
+.auth-provider-btn.google-btn {
+  background: white;
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.auth-provider-btn.google-btn:hover {
+  background: #f9f9f9;
+  border-color: #ccc;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.provider-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.auth-divider::before {
+  margin-right: 15px;
+}
+.auth-divider::after {
+  margin-left: 15px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.auth-input-group {
+  text-align: left;
+}
+
+.auth-input-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.auth-input-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.auth-input-group input:focus {
+  border-color: #c6000f;
+}
+
+.forgot-password-link {
+  font-size: 0.85rem;
+  color: #c6000f;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.forgot-password-link:hover {
+  color: #7a0009;
+  text-decoration: underline;
+}
+
+.auth-submit-btn {
+  background: linear-gradient(135deg, #ff4d4d, #c6000f);
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.auth-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(198, 0, 15, 0.4);
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.auth-footer a {
+  color: #c6000f;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.auth-footer a:hover {
+  color: #7a0009;
+}

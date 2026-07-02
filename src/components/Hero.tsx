@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Countdown from './Countdown';
 
 const Hero: React.FC = () => {
@@ -20,7 +21,9 @@ const Hero: React.FC = () => {
         <Countdown />
 
         <div className="hero-actions">
-          <button className="btn-primary-glow">Kirim Proposal</button>
+          <Link to="/login" style={{ textDecoration: 'none', width: '100%', maxWidth: '300px' }}>
+            <button className="btn-primary-glow" style={{ width: '100%' }}>Kirim Proposal</button>
+          </Link>
           <button className="btn-secondary">📖 Guidebook</button>
         </div>
       </div>

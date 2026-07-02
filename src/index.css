@@ -37,6 +37,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: scroll; /* Force vertical scrollbar to prevent layout shift */
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -828,9 +828,7 @@
 
 /* Modern Footer */
 .footer-modern {
-  background: rgba(40, 0, 5, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #280005;
   color: #ffffff;
   padding: 5rem 5% 1rem 5%;
   position: relative;
@@ -1015,10 +1013,10 @@
 @media (max-width: 768px) {
 
 
-  /* Stretch SVG wave to full page height on mobile without squishing */
+  /* Remove SVG background on mobile to prevent extreme rendering lag and fix performance */
   .app-container {
-    background-size: 300% 100%;
-    background-position: center top;
+    background-image: none !important;
+    background: #4a0005;
   }
 
   /* Navbar */
@@ -1072,6 +1070,13 @@
 
   .nav-actions {
     display: none;
+  }
+
+  .nav-actions.nav-mobile-open {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
   }
 
   /* Hero */

@@ -12,11 +12,6 @@ const Footer: React.FC = () => {
           <p className="footer-description">
             Program Hibah Pendanaan Project Based Learning untuk mendorong inovasi dan pemanfaatan teknologi digital guna menyelesaikan masalah nyata di masyarakat.
           </p>
-          <div className="social-icons">
-            <a href="#" className="social-icon">IG</a>
-            <a href="#" className="social-icon">IN</a>
-            <a href="#" className="social-icon">YT</a>
-          </div>
         </div>
 
         <div className="footer-column">
@@ -39,7 +34,7 @@ const Footer: React.FC = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} IASC UIN Syarif Hidayatullah Jakarta & APTIKOM. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} <a href="https://github.com/RyyzDev">RyyzDev.</a> All rights reserved.</p>
       </div>
     </footer>
   );

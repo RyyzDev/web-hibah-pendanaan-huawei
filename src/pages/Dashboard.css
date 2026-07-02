@@ -1,0 +1,357 @@
+.dashboard-container {
+  min-height: 100vh;
+  padding: 120px 5% 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-content {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  flex: 0 0 280px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  height: fit-content;
+}
+
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.avatar-large {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #ff4d4d, #c6000f);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 20px rgba(198,0,15,0.3);
+}
+
+.sidebar-profile h3 {
+  color: #7a0009;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-btn {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar-btn:hover {
+  background: rgba(198, 0, 15, 0.05);
+  color: #c6000f;
+}
+
+.sidebar-btn.active {
+  background: linear-gradient(135deg, rgba(255, 77, 77, 0.1), rgba(198, 0, 15, 0.1));
+  color: #c6000f;
+  box-shadow: inset 3px 0 0 #c6000f;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+/* Main Panel */
+.dashboard-main {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.dashboard-title {
+  color: #7a0009;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-desc {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Home / Riwayat Tab */
+.history-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+  margin-top: 1.5rem;
+}
+
+.history-icon {
+  font-size: 2.5rem;
+  background: rgba(198,0,15,0.05);
+  padding: 15px;
+  border-radius: 12px;
+  margin-right: 1.5rem;
+}
+
+.history-info {
+  flex: 1;
+}
+
+.history-info h4 {
+  color: #333;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+
+.history-info p {
+  margin: 0;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.history-status {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.history-status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Profile Tab */
+.profile-form-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0,0,0,0.05);
+  margin-top: 1.5rem;
+}
+
+.profile-avatar-edit {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.avatar-preview {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ff4d4d, #c6000f);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.avatar-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-upload-avatar {
+  background: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-delete-avatar {
+  background: none;
+  color: #c6000f;
+  border: 1px solid #c6000f;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-form .form-group {
+  margin-bottom: 1.2rem;
+}
+.profile-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+.profile-form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.section-subtitle {
+  color: #7a0009;
+  margin: 2rem 0 1rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.btn-save-profile {
+  background: linear-gradient(135deg, #ff4d4d, #c6000f);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Proposal Tab */
+.upload-dropzone {
+  border: 2px dashed #ccc;
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: rgba(255,255,255,0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.upload-dropzone.drag-active {
+  border-color: #c6000f;
+  background: rgba(198,0,15,0.05);
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+.upload-label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.upload-icon {
+  font-size: 3rem;
+}
+
+.upload-hint {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.file-name {
+  font-weight: 600;
+  color: #c6000f;
+}
+
+.btn-submit-proposal {
+  background: linear-gradient(135deg, #ff4d4d, #c6000f);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Remove wave background on dashboard for all devices */
+body.dashboard-page .app-container {
+  background-image: none !important;
+  background: #4a0005 !important;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding-top: 100px;
+  }
+
+  .dashboard-content {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    flex: auto;
+    width: 100%;
+  }
+
+  .profile-form-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-avatar-edit {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .avatar-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-upload-avatar,
+  .btn-delete-avatar {
+    width: 100%;
+  }
+}
