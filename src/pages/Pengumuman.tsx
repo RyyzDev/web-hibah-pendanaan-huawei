@@ -5,10 +5,17 @@ import { supabase } from '../utils/supabase';
 import './Pengumuman.css';
 import { IoMegaphone, IoRibbon } from 'react-icons/io5';
 
+interface Proposal {
+  id: string;
+  judul: string;
+  nama_lengkap: string;
+  instansi: string;
+}
+
 
 
 const Pengumuman: React.FC = () => {
-  const [fundedProposals, setFundedProposals] = useState<Record<string, unknown>[]>([]);
+  const [fundedProposals, setFundedProposals] = useState<Proposal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

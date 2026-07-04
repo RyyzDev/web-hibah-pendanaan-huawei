@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, DragEvent, ChangeEvent, FormEvent } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import type { DragEvent, ChangeEvent, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { IoArrowBack, IoPersonOutline, IoSchoolOutline, IoDocumentTextOutline, IoCheckboxOutline, IoCloudUploadOutline, IoCloseCircle, IoSendSharp, IoWarningOutline, IoCheckmarkCircleOutline } from 'react-icons/io5';
 import Navbar from '../components/Navbar';

@@ -34,6 +34,23 @@ type SidebarItem = {
   children?: { key: string; label: string }[];
 };
 
+interface Proposal {
+  id: string;
+  nama_lengkap: string;
+  email: string;
+  whatsapp: string;
+  instansi: string;
+  judul: string;
+  deskripsi: string;
+  kategori: string;
+  file_url?: string;
+  status: string;
+  alasan_tolak?: string;
+  created_at: string;
+  ketua?: string;
+  tanggal?: string;
+}
+
 const sidebarItems: SidebarItem[] = [
   { key: 'dashboard', icon: MdDashboard, label: 'Dashboard' },
   { 
@@ -65,8 +82,8 @@ const Dashboard: React.FC = () => {
   const [expandedKeys, setExpandedKeys] = useState<string[]>(['riwayat']);
   const [isMobile, setIsMobile] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [proposals, setProposals] = useState<Record<string, unknown>[]>([]);
-  const [selectedProposal, setSelectedProposal] = useState<Record<string, unknown> | null>(null);
+  const [proposals, setProposals] = useState<Proposal[]>([]);
+  const [selectedProposal, setSelectedProposal] = useState<Proposal | null>(null);
   const [confirmAction, setConfirmAction] = useState<'terima' | 'tolak' | 'alasan_tolak' | null>(null);
   const [rejectReason, setRejectReason] = useState('');
   const [finalisasiSelections, setFinalisasiSelections] = useState<string[]>([]);
@@ -112,7 +129,7 @@ const Dashboard: React.FC = () => {
         console.error('Error fetching proposals:', error);
       } else {
         // Map data to match component expectations
-        const mappedData = data.map((item: Record<string, unknown>) => ({
+        const mappedData: Proposal[] = data.map((item: any) => ({
           ...item,
           ketua: item.nama_lengkap,
           tanggal: new Date(item.created_at).toLocaleDateString('id-ID', {
