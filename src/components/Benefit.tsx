@@ -1,18 +1,19 @@
 import React from 'react';
+import { IoTrophyOutline, IoCashOutline, IoHourglassOutline, IoPeopleOutline, IoCloudOutline, IoDocumentTextOutline } from 'react-icons/io5';
 
 const benefitData = [
-  { id: 2, component: 'Jumlah project didanai', detail: '10 judul project.', icon: '🏆' },
-  { id: 3, component: 'Besaran dana', detail: 'Maksimal Rp20.000.000 per judul project.', icon: '💰' },
-  { id: 4, component: 'Durasi pelaksanaan', detail: 'Juli-September 2026', icon: '⏳' },
-  { id: 5, component: 'Bentuk kegiatan', detail: 'Project berbasis masalah nyata yang melibatkan dosen, 10 mahasiswa, dan mitra pengguna.', icon: '👥' },
-  { id: 6, component: 'Kewajiban teknologi', detail: 'Menggunakan platform atau teknologi Huawei, seperti Huawei Cloud, Huawei AI, atau teknologi Huawei lain yang relevan.', icon: '☁️' },
-  { id: 7, component: 'Luaran wajib', detail: 'Laporan kegiatan, publikasi minimal SINTA 4, dan HKI.', icon: '📑' },
+  { id: 2, component: 'Jumlah Project Didanai', detail: '10 Judul Project Terpilih.', icon: <IoTrophyOutline /> },
+  { id: 3, component: 'Besaran Dana', detail: 'Maksimal Rp20.000.000 per judul project.', icon: <IoCashOutline /> },
+  { id: 4, component: 'Durasi Pelaksanaan', detail: 'Juli-September 2026', icon: <IoHourglassOutline /> },
+  { id: 5, component: 'Bentuk Kegiatan', detail: 'Project berbasis masalah nyata yang melibatkan dosen, 10 mahasiswa, dan mitra pengguna.', icon: <IoPeopleOutline /> },
+  { id: 6, component: 'Kewajiban Teknologi', detail: 'Menggunakan platform atau teknologi Huawei, seperti Huawei Cloud, Huawei AI, atau teknologi Huawei lain yang relevan.', icon: <IoCloudOutline /> },
+  { id: 7, component: 'Luaran Wajib', detail: 'Laporan kegiatan, publikasi minimal SINTA 4, dan HKI.', icon: <IoDocumentTextOutline /> },
 ];
 
 const Benefit: React.FC = () => {
   return (
     <section id="benefit" className="section benefit-section">
-      <h2 className="section-title">Ketentuan & Benefit Pendanaan</h2>
+      <h2 className="section-title">Ketentuan</h2>
       
       <div className="benefit-container">
         {benefitData.map(item => (

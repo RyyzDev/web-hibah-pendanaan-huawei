@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoArrowForward, IoClose } from 'react-icons/io5';
 
 interface ScopeItem {
   id: number;
@@ -34,7 +35,7 @@ const Programs: React.FC = () => {
         {scopes.map(scope => (
           <div key={scope.id} className="scope-card" onClick={() => setSelectedScope(scope)}>
             <h3>{scope.title}</h3>
-            <span className="scope-icon">&rarr;</span>
+            <span className="scope-icon"><IoArrowForward /></span>
           </div>
         ))}
       </div>
@@ -42,7 +43,7 @@ const Programs: React.FC = () => {
       {selectedScope && (
         <div className="modal-overlay" onClick={() => setSelectedScope(null)}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedScope(null)}>&times;</button>
+            <button className="modal-close" onClick={() => setSelectedScope(null)}><IoClose /></button>
             <h3>{selectedScope.title}</h3>
             <div className="modal-body">
               <div className="modal-section">

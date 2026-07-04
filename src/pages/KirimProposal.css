@@ -1,0 +1,407 @@
+body.kirim-proposal-page .app-container {
+  background-image: none !important;
+  background: #4a0005 !important;
+}
+
+.kirim-proposal-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 120px 20px 40px;
+}
+
+.kirim-proposal-card {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3rem;
+}
+
+.kirim-proposal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.kirim-proposal-back:hover {
+  color: #c6000f;
+}
+
+.kirim-proposal-title {
+  color: #7a0009;
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.kirim-proposal-subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.form-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid rgba(198, 0, 15, 0.1);
+}
+
+.form-section-header:first-of-type {
+  margin-top: 0;
+}
+
+.form-section-header .section-icon {
+  color: #c6000f;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.form-section-header .section-label {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.kirim-proposal-form-group {
+  margin-bottom: 1.2rem;
+}
+
+.kirim-proposal-form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.required-star {
+  color: #e53e3e; /* Red color for requirement indicator */
+  margin-left: 2px;
+}
+
+.kirim-proposal-form-group input[type="text"],
+.kirim-proposal-form-group input[type="email"],
+.kirim-proposal-form-group input[type="tel"],
+.kirim-proposal-form-group select,
+.kirim-proposal-form-group textarea {
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1.5px solid #e0e0e0;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: inherit;
+  background: #fafafa;
+}
+
+.kirim-proposal-form-group input:focus,
+.kirim-proposal-form-group select:focus,
+.kirim-proposal-form-group textarea:focus {
+  border-color: #c6000f;
+  box-shadow: 0 0 0 3px rgba(198, 0, 15, 0.08);
+  background: #fff;
+}
+
+.kirim-proposal-form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.kirim-proposal-char-count {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+  margin-top: 0.3rem;
+}
+
+.kirim-proposal-dropzone {
+  border: 2px dashed #d0d0d0;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #fafafa, #f5f5f5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.kirim-proposal-dropzone:hover {
+  border-color: #c6000f;
+  background: linear-gradient(135deg, #fff5f5, #fafafa);
+}
+
+.kirim-proposal-dropzone.drag-active {
+  border-color: #c6000f;
+  background: rgba(198, 0, 15, 0.04);
+  box-shadow: 0 0 0 4px rgba(198, 0, 15, 0.06);
+}
+
+.kirim-proposal-dropzone-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #c6000f;
+  display: flex;
+  justify-content: center;
+}
+
+.kirim-proposal-dropzone-text {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.kirim-proposal-dropzone-text span {
+  color: #c6000f;
+  font-weight: 600;
+}
+
+.kirim-proposal-dropzone-hint {
+  color: #999;
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.kirim-proposal-file-info {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  background: rgba(198, 0, 15, 0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(198, 0, 15, 0.1);
+}
+
+.kirim-proposal-file-info .file-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  flex: 1;
+}
+
+.kirim-proposal-dropzone-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff5f5;
+  border: 1px solid rgba(198, 0, 15, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 15px;
+  text-align: left;
+  font-size: 0.85rem;
+  color: #c6000f;
+  line-height: 1.5;
+}
+
+.kirim-proposal-dropzone-note .note-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.kirim-proposal-file-info .remove-file {
+  color: #c6000f;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+}
+
+.kirim-proposal-file-info .remove-file:hover {
+  opacity: 0.7;
+}
+
+.agreement-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.agreement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 1rem;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1.5px solid #e0e0e0;
+  transition: border-color 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.agreement-item:hover {
+  border-color: #c6000f;
+  background: #fff5f5;
+}
+
+.agreement-item.checked {
+  border-color: rgba(198, 0, 15, 0.3);
+  background: rgba(198, 0, 15, 0.03);
+}
+
+.agreement-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+  accent-color: #c6000f;
+  cursor: pointer;
+}
+
+.agreement-item .agreement-text {
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.kirim-proposal-submit-btn {
+  background: linear-gradient(135deg, #ff4d4d, #c6000f);
+  color: white;
+  border-radius: 14px;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  width: 100%;
+  border: none;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.kirim-proposal-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(198, 0, 15, 0.4);
+}
+
+.kirim-proposal-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .kirim-proposal-container {
+    padding: 100px 12px 24px;
+  }
+  .kirim-proposal-card {
+    padding: 1.8rem;
+    border-radius: 18px;
+  }
+  .kirim-proposal-title {
+    font-size: 1.5rem;
+  }
+  .kirim-proposal-dropzone {
+    padding: 2rem 1rem;
+  }
+  .form-section-header {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Success Popup */
+.success-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.success-popup-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 3rem;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-popup-icon {
+  font-size: 5rem;
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+.success-popup-title {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.success-popup-message {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.success-popup-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-success-close {
+  background: #c6000f;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-success-close:hover {
+  background: #a5000c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(198, 0, 15, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}

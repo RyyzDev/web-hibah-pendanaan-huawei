@@ -3,7 +3,7 @@ import './FAQ.css';
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 const faqs: FAQItem[] = [
@@ -26,6 +26,14 @@ const faqs: FAQItem[] = [
   {
     question: "Kapan batas akhir pengumpulan proposal?",
     answer: "Batas akhir pendaftaran dan pengumpulan proposal adalah tanggal 20 Juli 2026 pukul 23:59 WIB. Pastikan Anda mengunggahnya sebelum waktu hitung mundur (countdown) di halaman utama berakhir."
+  },
+  {
+    question: "Dimana saya mengetahui proposal saya lulus atau tidak?",
+    answer: (
+      <>
+        <a href="/pengumuman" style={{ color: '#ffaa77', textDecoration: 'underline' }}>Klik disini</a> untuk melihat pengumuman. Hasil juga akan dikirimkan via grup Whatsapp.
+      </>
+    )
   }
 ];
 

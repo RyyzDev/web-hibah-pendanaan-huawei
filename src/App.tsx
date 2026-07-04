@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import './App.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Register from './pages/Register';
+import KirimProposal from './pages/KirimProposal';
 import Dashboard from './pages/Dashboard';
+import Pengumuman from './pages/Pengumuman';
 import FloatingChat from './components/FloatingChat';
 
 const ScrollToTop = () => {
@@ -26,9 +27,10 @@ const App: React.FC = () => {
       <div className="app-container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/kirim-proposal" element={<KirimProposal />} />
+          <Route path="/pengumuman" element={<Pengumuman />} />
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
         </Routes>
         <FloatingChat />
       </div>

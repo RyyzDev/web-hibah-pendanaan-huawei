@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         <Countdown />
 
         <div className="hero-actions">
-          <Link to="/login" style={{ textDecoration: 'none', width: '100%', maxWidth: '300px' }}>
+          <Link to="/kirim-proposal" style={{ textDecoration: 'none', width: '100%', maxWidth: '300px' }}>
             <button className="btn-primary-glow" style={{ width: '100%' }}>Kirim Proposal</button>
           </Link>
           <button className="btn-secondary">📖 Guidebook</button>
