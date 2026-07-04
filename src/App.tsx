@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import KirimProposal from './pages/KirimProposal';
 import Dashboard from './pages/Dashboard';
 import Pengumuman from './pages/Pengumuman';
+import NotFound from './pages/NotFound';
 import FloatingChat from './components/FloatingChat';
 
 const ScrollToTop = () => {
@@ -31,6 +32,7 @@ const App: React.FC = () => {
           <Route path="/pengumuman" element={<Pengumuman />} />
           <Route path="/admin/login" element={<Login />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <FloatingChat />
       </div>

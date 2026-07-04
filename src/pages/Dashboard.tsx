@@ -168,8 +168,15 @@ const Dashboard: React.FC = () => {
     });
   };
 
-  const handleSubmitFinalisasi = async () => {
+  const handleSubmitFinalisasi = async (key: string) => {
     if (finalisasiSelections.length === 0) return;
+
+    if (key !== "FINALISASI-PENERIMA-2026") {
+      setPopup({ isOpen: true, type: 'error', title: 'Akses Ditolak', message: 'Teks konfirmasi salah!'});
+      setShowLockConfirm(false);
+      return;
+    }
+
     setIsFinalisasiSubmitting(true);
     const adminUser = localStorage.getItem('adminUser');
     const adminPass = localStorage.getItem('adminPass');

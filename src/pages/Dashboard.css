@@ -566,6 +566,11 @@ body.dashboard-page .floating-chat-container {
   font-size: 0.9rem;
 }
 
+.btn-modal-action:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
 .btn-download-large {
   display: flex;
   align-items: center;
@@ -599,7 +604,7 @@ body.dashboard-page .floating-chat-container {
   color: white;
 }
 
-.btn-terima:hover {
+.btn-terima:hover:not(:disabled) {
   background: #059669;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);

@@ -7,7 +7,7 @@ interface FinalisasiSectionProps {
   setSelectedProposal: (proposal: Proposal) => void;
   finalisasiSelections: string[];
   handleSelectFinalisasi: (id: string) => void;
-  handleSubmitFinalisasi: () => void;
+  handleSubmitFinalisasi: (key: string) => void;
   isFinalisasiSubmitting: boolean;
   showLockConfirm: boolean;
   setShowLockConfirm: (show: boolean) => void;
@@ -23,6 +23,7 @@ const FinalisasiSection: React.FC<FinalisasiSectionProps> = ({
   showLockConfirm,
   setShowLockConfirm
 }) => {
+  const [finalisasiKey, setFinalisasiKey] = React.useState('');
   const diterimaProposals = proposals.filter(p => p.status === 'Diterima' || p.status === 'Didanai');
   const hasDidanai = proposals.some(p => p.status === 'Didanai');
 
@@ -114,11 +115,36 @@ const FinalisasiSection: React.FC<FinalisasiSectionProps> = ({
             <p style={{ color: '#555', marginBottom: '24px' }}>
               Anda akan mengunci <strong>{finalisasiSelections.length} proposal</strong> sebagai penerima pendanaan.
               Proposal yang tidak terpilih akan tetap berstatus "Diterima".<br/><br/>
-              <strong>Tindakan ini permanen dan tidak dapat diubah kembali oleh Admin.</strong> Lanjutkan?
+              <strong>Tindakan ini permanen dan tidak dapat diubah kembali oleh Admin.</strong><br/>
+              Untuk melanjutkan, ketik <br/> <strong>FINALISASI-PENERIMA-2026</strong> <br/>pada kolom di bawah ini:
             </p>
+            <input 
+              type="text" 
+              placeholder="FINALISASI-PENERIMA-2026" 
+              value={finalisasiKey}
+              onChange={(e) => setFinalisasiKey(e.target.value)}
+              style={{
+                width: '100%',
+                padding: '10px',
+                marginBottom: '20px',
+                borderRadius: '8px',
+                border: '1px solid #ccc',
+                boxSizing: 'border-box',
+                textAlign: 'center',
+                fontWeight: 'bold'
+              }}
+            />
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
-              <button className="btn-modal-action btn-batal" onClick={() => setShowLockConfirm(false)} disabled={isFinalisasiSubmitting}>Batal</button>
-              <button className="btn-modal-action btn-terima" onClick={handleSubmitFinalisasi} disabled={isFinalisasiSubmitting}>
+              <button className="btn-modal-action btn-batal" onClick={() => { setShowLockConfirm(false); setFinalisasiKey(''); }} disabled={isFinalisasiSubmitting}>Batal</button>
+              <button 
+                className="btn-modal-action btn-terima" 
+                onClick={() => { handleSubmitFinalisasi(finalisasiKey); setFinalisasiKey(''); }} 
+                disabled={isFinalisasiSubmitting || finalisasiKey !== 'FINALISASI-PENERIMA-2026'}
+                style={{
+                  cursor: (isFinalisasiSubmitting || finalisasiKey !== 'FINALISASI-PENERIMA-2026') ? 'not-allowed' : 'pointer',
+                  opacity: (isFinalisasiSubmitting || finalisasiKey !== 'FINALISASI-PENERIMA-2026') ? 0.6 : 1
+                }}
+              >
                 {isFinalisasiSubmitting ? 'Memproses...' : 'Ya, Kunci Permanen'}
               </button>
             </div>
