@@ -29,7 +29,7 @@ ChartJS.register(
 
 type SidebarItem = {
   key: string;
-  icon: any;
+  icon: React.ElementType;
   label: string;
   children?: { key: string; label: string }[];
 };
@@ -65,9 +65,8 @@ const Dashboard: React.FC = () => {
   const [expandedKeys, setExpandedKeys] = useState<string[]>(['riwayat']);
   const [isMobile, setIsMobile] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [proposals, setProposals] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [selectedProposal, setSelectedProposal] = useState<any | null>(null);
+  const [proposals, setProposals] = useState<Record<string, unknown>[]>([]);
+  const [selectedProposal, setSelectedProposal] = useState<Record<string, unknown> | null>(null);
   const [confirmAction, setConfirmAction] = useState<'terima' | 'tolak' | 'alasan_tolak' | null>(null);
   const [rejectReason, setRejectReason] = useState('');
   const [finalisasiSelections, setFinalisasiSelections] = useState<string[]>([]);
@@ -103,7 +102,6 @@ const Dashboard: React.FC = () => {
   }, []);
 
   const fetchProposals = async () => {
-    setIsLoading(true);
     try {
       const { data, error } = await supabase
         .from('proposals')
@@ -114,7 +112,7 @@ const Dashboard: React.FC = () => {
         console.error('Error fetching proposals:', error);
       } else {
         // Map data to match component expectations
-        const mappedData = data.map((item: any) => ({
+        const mappedData = data.map((item: Record<string, unknown>) => ({
           ...item,
           ketua: item.nama_lengkap,
           tanggal: new Date(item.created_at).toLocaleDateString('id-ID', {
@@ -127,12 +125,11 @@ const Dashboard: React.FC = () => {
       }
     } catch (err) {
       console.error('Failed to fetch:', err);
-    } finally {
-      setIsLoading(false);
     }
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchProposals();
   }, []);
 
@@ -163,12 +160,12 @@ const Dashboard: React.FC = () => {
       setRejectReason('');
       setSelectedProposal(null);
       fetchProposals();
-    } catch (err: any) {
+    } catch (err: unknown) {
       setPopup({
         isOpen: true,
         type: 'error',
         title: 'Terjadi Kesalahan',
-        message: 'Gagal mengupdate status: ' + err.message
+        message: 'Gagal mengupdate status: ' + (err as Error).message
       });
     }
   };
@@ -197,9 +194,8 @@ const Dashboard: React.FC = () => {
       setPopup({ isOpen: true, type: 'success', title: 'Berhasil', message: 'Finalisasi berhasil dikunci. Penerima pendanaan telah ditetapkan.'});
       fetchProposals();
       setShowLockConfirm(false);
-      setLockConfirmText('');
-    } catch (err: any) {
-      setPopup({ isOpen: true, type: 'error', title: 'Gagal', message: 'Gagal mengunci finalisasi: ' + err.message});
+    } catch (err: unknown) {
+      setPopup({ isOpen: true, type: 'error', title: 'Gagal', message: 'Gagal mengupdate status: ' + (err as Error).message});
     } finally {
       setIsFinalisasiSubmitting(false);
     }

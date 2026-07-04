@@ -3,12 +3,12 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { supabase } from '../utils/supabase';
 import './Pengumuman.css';
-import { IoMegaphone, IoTime, IoDocumentText, IoRibbon } from 'react-icons/io5';
+import { IoMegaphone, IoRibbon } from 'react-icons/io5';
 
 
 
 const Pengumuman: React.FC = () => {
-  const [fundedProposals, setFundedProposals] = useState<any[]>([]);
+  const [fundedProposals, setFundedProposals] = useState<Record<string, unknown>[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

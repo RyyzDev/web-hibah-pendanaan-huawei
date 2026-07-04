@@ -41,7 +41,8 @@ const Login: React.FC = () => {
       localStorage.setItem('adminUser', username);
       localStorage.setItem('adminPass', password);
       navigate('/admin/dashboard');
-    } catch (err: any) {
+    } catch (err: unknown) {
+      console.error(err);
       setPopup({
         isOpen: true,
         type: 'error',

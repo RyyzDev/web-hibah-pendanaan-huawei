@@ -139,7 +139,7 @@ const KirimProposal: React.FC = () => {
         const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 15)}.${fileExt}`;
         const filePath = `proposals/${fileName}`;
         
-        const { error: uploadError, data: uploadData } = await supabase.storage
+        const { error: uploadError } = await supabase.storage
           .from('proposal_documents')
           .upload(filePath, file);
           
@@ -181,8 +181,8 @@ const KirimProposal: React.FC = () => {
       setFormData(initialFormData);
       setFile(null);
       setAgreements({ kebijakan: false, originalitas: false, sanksi: false });
-    } catch (error: any) {
-      alert(error.message || 'Terjadi kesalahan saat mengirim proposal.');
+    } catch (error: unknown) {
+      alert((error as Error).message || 'Terjadi kesalahan saat mengirim proposal.');
       console.error('Submission error:', error);
     } finally {
       setIsSubmitting(false);
