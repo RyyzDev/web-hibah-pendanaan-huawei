@@ -14,6 +14,7 @@ const KATEGORI_OPTIONS = [
   'UMKM dan Ekonomi Lokal',
   'Lingkungan dan Kebencanaan',
   'Smart Farming',
+  'Lainnya'
 ];
 
 const MAX_DESC_CHARS = 500;

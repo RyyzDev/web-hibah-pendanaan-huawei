@@ -740,8 +740,8 @@
 .events-section {
   background: transparent;
   margin-top: 120px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 .snake-timeline {
@@ -751,7 +751,7 @@
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
 }
 
 .snake-row {
