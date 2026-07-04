@@ -61,7 +61,7 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (!isLoggedIn) {
-      navigate('/login');
+      navigate('/admin/login');
     }
 
     // Apply dashboard specific styles
